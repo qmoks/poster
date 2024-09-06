@@ -1,3 +1,9 @@
+import Container from '~/Global/Container'
+
 export default function HomePage() {
-  return <mark className="px-1.5 py-0.5 font-mono m-5">веб-плакат</mark>
+  return (
+    <Container>
+      <mark className="px-1.5 py-0.5">веб-плакат</mark>
+    </Container>
+  )
 }
