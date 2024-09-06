@@ -12,12 +12,21 @@ const config = {
       md: {max: '1024px'},
       sm: {max: '428px'},
     },
-    extend: {},
+    extend: {
+      colors: {
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        primary: {
+          DEFAULT: 'var(--primary)',
+        },
+      },
+    },
   },
   plugins: [
     plugin(function sizePlugin(api) {
       api.matchUtilities({s: (value) => ({width: value, height: value})}, {values: api.theme('width')})
     }),
+    require('tailwindcss-animate'),
   ],
 } satisfies Config
 
