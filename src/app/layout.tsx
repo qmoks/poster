@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   description: 'руководство по веб-плакатам',
 }
 
+import Analytics from '~/Global/Analytics'
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -28,7 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
-      <body className={`${JetBrainsMono.className} antialiased bg-background text-foreground`}>{children}</body>
+      <body className={`${JetBrainsMono.className} antialiased bg-background text-foreground`}>
+        {children}
+
+        {process.env.NODE_ENV === 'production' && <Analytics />}
+      </body>
     </html>
   )
 }
