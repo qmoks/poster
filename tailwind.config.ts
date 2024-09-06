@@ -1,5 +1,6 @@
 import type {Config} from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+import {fontFamily} from 'tailwindcss/defaultTheme'
 
 const config = {
   darkMode: ['class'],
@@ -11,6 +12,9 @@ const config = {
       lg: {max: '1280px'},
       md: {max: '1024px'},
       sm: {max: '428px'},
+    },
+    fontFamily: {
+      mono: ['var(--font-jetbrains-mono)', ...fontFamily.mono],
     },
     extend: {
       colors: {
